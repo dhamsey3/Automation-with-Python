@@ -21,6 +21,6 @@ Useful tool for personal file management.
 Libraries and Modules:
 
 # os module: for file and directory operations.
-shutil module: for moving files to different directories.
-argparse module: for command-line argument parsing (optional, if you want to include command-line options).
+# shutil module: for moving files to different directories.
+# argparse module: for command-line argument parsing (optional, if you want to include command-line options).
 You can expand on this project by adding additional features such as scheduling the file organization process, handling duplicate files, or implementing a graphical user interface (GUI) for better user interaction.

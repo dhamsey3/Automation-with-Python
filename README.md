@@ -1,64 +1,185 @@
 # Automation with Python
 
-A collection of Python automation scripts designed to simplify everyday tasks and improve productivity. This repository demonstrates practical automation techniques using Python, with a focus on file management and workflow automation.
+A collection of Python automation scripts designed to simplify repetitive tasks and improve productivity.
 
-## File Organizer
+---
 
-The **File Organizer** script automatically organizes files in a target directory by sorting them into folders based on their file extensions. It helps keep directories clean and reduces the time spent manually managing files.
+# File Organizer
+
+The **File Organizer** automatically organizes files into folders based on their file extensions. It is a simple yet practical automation tool that demonstrates Python file handling, directory management, and command-line scripting.
+
+Whether you're cleaning up your Downloads or Documents folder, this script helps keep files organized with minimal effort.
+
+---
 
 ## Features
 
-* Scan a target directory for files.
-* Automatically create folders based on file extensions.
-* Move files into their corresponding folders.
-* Optionally exclude specific file types or directories.
-* Includes basic error handling for common file operation issues.
+* 📂 Organizes files by file extension.
+* 📁 Automatically creates destination folders when needed.
+* 📝 Supports common document, image, audio, video, and archive formats.
+* ⚠️ Prevents overwriting duplicate files by generating unique filenames.
+* 🔍 Includes a **dry-run** mode to preview changes before moving files.
+* 💻 Supports custom target directories through command-line arguments.
+* ✅ Handles invalid or missing directories gracefully.
 
-## Benefits
+---
 
-* Demonstrates Python file and directory manipulation.
-* Showcases automation and scripting skills.
-* Illustrates the use of clean, reusable code for repetitive tasks.
-* Provides a practical utility for personal file management.
+## Supported File Types
 
-## Technologies Used
+| File Type      | Extensions                      |
+| -------------- | ------------------------------- |
+| Text           | `.txt`                          |
+| PDF            | `.pdf`                          |
+| Images         | `.jpg`, `.jpeg`, `.png`, `.gif` |
+| Music          | `.mp3`                          |
+| Videos         | `.mp4`                          |
+| Word Documents | `.docx`                         |
+| Excel Files    | `.xlsx`                         |
+| PowerPoint     | `.pptx`                         |
+| Archives       | `.zip`                          |
 
-* **Python**
-* **os** – File and directory operations.
-* **shutil** – Moving and managing files.
-* **argparse** *(optional)* – Command-line argument parsing.
+More file types can easily be added by extending the `EXTENSION_TO_FOLDER` dictionary.
 
-## Future Improvements
+---
 
-Potential enhancements include:
+## Project Structure
 
-* Scheduled file organization.
-* Duplicate file detection and management.
-* Graphical User Interface (GUI).
-* Custom organization rules based on file size, creation date, or filename patterns.
-* Configuration file support for reusable settings.
+```text
+Automation-with-Python/
+│
+├── file_organizer.py
+└── README.md
+```
 
-## Getting Started
+---
+
+## Requirements
+
+* Python 3.8+
+* No third-party libraries required.
+
+Built using Python's standard library:
+
+* `os`
+* `shutil`
+* `argparse`
+* `datetime`
+
+---
+
+## Installation
 
 Clone the repository:
 
 ```bash
 git clone https://github.com/dhamsey3/Automation-with-Python.git
+
 cd Automation-with-Python
 ```
 
-Run the File Organizer:
+---
+
+## Usage
+
+Organize the default **Documents** directory:
 
 ```bash
 python file_organizer.py
 ```
 
-> **Note:** Update the target directory in the script or provide it as a command-line argument if supported.
+Organize another directory:
+
+```bash
+python file_organizer.py Downloads
+```
+
+Preview changes without moving files:
+
+```bash
+python file_organizer.py Downloads --dry-run
+```
+
+---
+
+## Example
+
+### Before
+
+```text
+Documents/
+│
+├── report.pdf
+├── notes.txt
+├── holiday.jpg
+├── music.mp3
+└── presentation.pptx
+```
+
+### After
+
+```text
+Documents/
+│
+├── PDFs/
+│   └── report.pdf
+│
+├── Text Files/
+│   └── notes.txt
+│
+├── Images/
+│   └── holiday.jpg
+│
+├── Music/
+│   └── music.mp3
+│
+└── PowerPoint Files/
+    └── presentation.pptx
+```
+
+---
+
+## Future Improvements
+
+Possible enhancements include:
+
+* Recursive folder scanning.
+* File organization by creation or modification date.
+* Duplicate file detection using file hashes.
+* Configuration file (YAML or JSON).
+* Logging to a file.
+* Interactive menu.
+* Graphical User Interface (GUI).
+* Scheduled automatic organization.
+* Unit tests.
+
+---
+
+## Learning Outcomes
+
+This project demonstrates:
+
+* Python scripting
+* File and directory operations
+* Command-line applications
+* Error handling
+* Code organization
+* Automation techniques
+* Standard library usage
+
+---
 
 ## Contributing
 
-Contributions, suggestions, and improvements are welcome. Feel free to open an issue or submit a pull request.
+Contributions are welcome!
+
+If you'd like to improve the project, feel free to:
+
+* Open an issue
+* Submit a pull request
+* Suggest new features
+
+---
 
 ## License
 
-This project is available under the MIT License.
+This project is available for educational and personal use.

@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "automation-tools"
+version = "1.0.0"
+description = "Small command-line Python automation tools."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["boto3>=1.34"]
+
+[project.scripts]
+file-organizer = "automation_tools.file_organizer:main"
+log-analyzer = "automation_tools.log_analyzer:main"
+aws-s3-backup = "automation_tools.aws_s3_backup:main"
+aws-ec2-report = "automation_tools.aws_ec2_reporter:main"
+aws-cloudwatch-logs = "automation_tools.aws_cloudwatch_logs:main"
